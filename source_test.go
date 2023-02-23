@@ -1,15 +1,15 @@
-package connectorname_test
+package http_test
 
 import (
 	"context"
 	"strings"
 	"testing"
 
-	connectorname "github.com/conduitio/conduit-connector-connectorname"
+	http "github.com/github.com/raulb/conduit-connector-http"
 )
 
 func TestConfigureSource_FailsWhenConfigEmpty(t *testing.T) {
-	con := connectorname.Source{}
+	con := http.Source{}
 	err := con.Configure(context.Background(), make(map[string]string))
 	if err == nil {
 		t.Error("expected error for missing config params")
@@ -21,7 +21,7 @@ func TestConfigureSource_FailsWhenConfigEmpty(t *testing.T) {
 }
 
 func TestTeardownSource_NoOpen(t *testing.T) {
-	con := connectorname.NewSource()
+	con := http.NewSource()
 	err := con.Teardown(context.Background())
 	if err != nil {
 		t.Errorf("expected no error, got %v", err)

@@ -1,4 +1,4 @@
-module github.com/conduitio/conduit-connector-connectorname
+module github.com/github.com/raulb/conduit-connector-http
 
 go 1.19
 
